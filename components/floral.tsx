@@ -1,0 +1,38 @@
+const positions = {
+  "top-right": "-right-16 -top-16",
+  "top-left": "-left-16 -top-16",
+  "bottom-right": "-right-20 -bottom-20",
+  "bottom-left": "-left-20 -bottom-20",
+};
+
+export default function FloralFlourish({
+  variant = "top-right",
+}: {
+  variant?: keyof typeof positions;
+}) {
+  return (
+    <svg
+      viewBox="0 0 400 400"
+      className={`pointer-events-none absolute ${positions[variant]} h-[360px] w-[360px] opacity-[0.12] sm:h-[420px] sm:w-[420px]`}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M200 40 C 220 90, 260 100, 290 70 C 270 110, 280 150, 320 160 C 280 165, 260 200, 280 240 C 245 215, 210 225, 195 265 C 190 225, 155 210, 120 230 C 145 195, 135 155, 100 135 C 140 140, 170 115, 165 75 C 185 105, 210 95, 200 40 Z"
+        stroke="#FF7AA2"
+        strokeWidth="1.5"
+      />
+      <circle cx="200" cy="150" r="6" stroke="#B98CFF" strokeWidth="1.5" />
+      <path
+        d="M60 300 C 90 280, 110 290, 115 320 C 95 305, 75 315, 60 300 Z"
+        stroke="#FFB37A"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M330 280 C 300 265, 285 280, 290 310 C 305 290, 325 295, 330 280 Z"
+        stroke="#B98CFF"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
