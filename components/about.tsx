@@ -10,25 +10,17 @@ export default function About() {
       </h2>
 
       <div className="mt-8 space-y-5 text-base leading-relaxed text-text-muted">
-        <p>
-          I didn&apos;t plan it this way, it just happened. Warehouse schemas and SQL first, at UMBC. Then statistics,
-          because I got tired of trusting results I couldn&apos;t explain.
-          Most recently, building and shipping LLM-powered apps, because I
-          wanted to see my work actually used, not just graded.
-        </p>
-        <p>
-          The thread running through all of it is responsibility. When I
-          built a crime-prediction model, I left out demographic data on
-          purpose, even though it would&apos;ve nudged accuracy up. When I
-          built a wellness companion with facial emotion detection, I made
-          sure nothing left the device. I&apos;d rather ship something a
-          little less flashy than something I can&apos;t stand behind.
-        </p>
-        <p>
-          I graduated with my Master&apos;s in Data Science from UMBC in May
-          2026, and I&apos;m looking for a team that cares about getting it
-          right as much as getting it fast.
-        </p>
+      <p>
+        My journey in data science has been a mix of learning, experimenting, and figuring out what I actually enjoy building. At UMBC, I started with SQL, databases, and data warehousing, then moved deeper into statistics and machine learning. Over time, I became more interested in not just analyzing data, but actually building things with it — which eventually led me to AI and LLM-powered applications.
+      </p>
+      
+      <p>
+        Some of my projects have also made me think beyond just model accuracy. While working on a crime prediction model, for example, I chose not to use demographic information because I didn't want the predictions to rely on sensitive attributes just for a small improvement in accuracy. For a wellness companion using facial emotion detection, I designed it so the data stays on the user's device.
+      </p>
+      
+      <p>
+        I completed my Master's in Data Science at UMBC in May 2026. Now, I'm looking for opportunities where I can keep learning, solve real problems, and build data and AI products that people can actually use.
+      </p>
       </div>
     </section>
   );
