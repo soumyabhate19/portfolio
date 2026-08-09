@@ -11,7 +11,7 @@ export default function About() {
 
       <div className="mt-8 space-y-5 text-base leading-relaxed text-text-muted">
       <p>
-        My journey in data science has been a mix of learning, experimenting, and figuring out what I actually enjoy building. At UMBC, I started with SQL, databases, and data warehousing, then moved deeper into statistics and machine learning. Over time, I became more interested in not just analyzing data, but actually building things with it — which eventually led me to AI and LLM-powered applications.
+        My journey in data science has been a mix of learning, experimenting, and figuring out what I actually enjoy building. At UMBC, I started with SQL, databases, and data warehousing, then moved deeper into statistics and machine learning. Over time, I became more interested in not just analyzing data, but actually building things with it, which eventually led me to AI and LLM-powered applications.
       </p>
       
       <p>
