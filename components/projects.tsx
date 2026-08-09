@@ -7,6 +7,7 @@ import {
   Activity,
   TrendingUp,
   HeartHandshake,
+  ChevronDown,
 } from "lucide-react";
 
 const icons = {
@@ -20,6 +21,7 @@ const icons = {
 const projects = [
   {
     key: "crime",
+    color: "#5CBB68",
     tag: "Machine Learning · Feb–May 2025",
     title: "Crime & Economic Analysis",
     subtitle: "Predicting violent crime risk from crime and census data",
@@ -43,6 +45,7 @@ const projects = [
   },
   {
     key: "stock",
+    color: "#4E9DD1",
     tag: "Big Data · Spark · Feb–May 2025",
     title: "Stock Market Volatility Analysis",
     subtitle: "Large-scale price trend analysis using Apache Spark",
@@ -64,6 +67,7 @@ const projects = [
   },
   {
     key: "legal",
+    color: "#A15FC0",
     tag: "RAG · LLM · Voice · Capstone · Aug–Dec 2025",
     title: "AI Legal Advisor",
     subtitle: "A RAG-based legal chatbot with a full voice interface",
@@ -88,6 +92,7 @@ const projects = [
   },
   {
     key: "emocare",
+    color: "#E2664B",
     tag: "Edge AI · LLM · Computer Vision · Aug–Dec 2025",
     title: "EmoCare",
     subtitle: "A personalized, voice-enabled wellness companion",
@@ -112,6 +117,7 @@ const projects = [
   },
   {
     key: "fitness",
+    color: "#2CA192",
     tag: "Applied Statistics · Feb–May 2026",
     title: "Fitness & Diabetes Prediction",
     subtitle: "Statistical analysis of lifestyle predictors using NHANES survey data",
@@ -138,72 +144,105 @@ const projects = [
 const tabs = ["overview", "problem", "approach", "results"] as const;
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+  const [expanded, setExpanded] = useState(false);
   const [active, setActive] = useState<(typeof tabs)[number]>("overview");
   const Icon = icons[project.key as keyof typeof icons];
 
   return (
-    <div className="min-w-0 rounded-2xl border border-border bg-card p-6 sm:p-8">
-      <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-bg">
-          <Icon className="h-[18px] w-[18px] text-accent-blue" />
+    <div className="min-w-0 rounded-2xl border border-border bg-card p-6 transition-all sm:p-8">
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="flex w-full items-start justify-between gap-4 text-left"
+      >
+        <div className="flex items-start gap-3">
+          <div
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+            style={{ backgroundColor: project.color }}
+          >
+            <Icon className="h-[18px] w-[18px] text-white" />
+          </div>
+          <div>
+            <span className="font-mono text-sm font-medium" style={{ color: project.color }}>
+              {project.tag}
+            </span>
+            <h3 className="mt-1 font-display text-xl font-semibold text-text sm:text-2xl">
+              {project.title}
+            </h3>
+            <p className="mt-1 text-sm text-text-muted">{project.subtitle}</p>
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2 inline-flex items-center gap-1.5 font-mono text-xs hover:underline"
+                style={{ color: project.color }}
+              >
+                View on GitHub →
+              </a>
+            )}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-md border px-2.5 py-1 font-mono text-xs"
+                  style={{ borderColor: project.color, color: project.color }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-        <span className="font-mono text-xs text-accent-mint">{project.tag}</span>
-      </div>
+        <ChevronDown
+          className={`mt-2 h-5 w-5 shrink-0 text-text-muted transition-transform ${expanded ? "rotate-180" : ""}`}
+        />
+      </button>
 
-      <h3 className="mt-3 font-display text-xl font-semibold text-text sm:text-2xl">
-        {project.title}
-      </h3>
-      <p className="mt-1 text-sm text-text-muted">{project.subtitle}</p>
-      {project.repo && (
-        <a href={project.repo} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1.5 font-mono text-xs text-accent-blue hover:underline">
-          View on GitHub →
-        </a>
+      {expanded && (
+        <div className="mt-5">
+          <div className="flex gap-1 overflow-x-auto border-b border-border">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActive(tab)}
+                className={`shrink-0 rounded-t-lg px-4 py-2 font-mono text-xs capitalize transition-colors ${active === tab ? "bg-bg text-accent-blue" : "text-text-muted hover:text-text"}`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-4 min-h-[80px]">
+            {active === "overview" && (
+              <p className="text-sm leading-relaxed text-text-muted">{project.overview}</p>
+            )}
+            {active === "problem" && (
+              <p className="text-sm leading-relaxed text-text-muted">{project.problem}</p>
+            )}
+            {active === "approach" && (
+              <ul className="space-y-2">
+                {project.approach.map((step) => (
+                  <li key={step} className="flex gap-3 text-sm leading-relaxed text-text-muted">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-mint" />
+                    {step}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {active === "results" && (
+              <ul className="space-y-2">
+                {project.results.map((point) => (
+                  <li key={point} className="flex gap-3 text-sm leading-relaxed text-text">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-mint" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
       )}
-
-      <div className="mt-5 flex flex-wrap gap-2">
-        {project.stack.map((tech) => (
-          <span key={tech} className="rounded-md border border-border px-2.5 py-1 font-mono text-[11px] text-text-muted">
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-6 flex gap-1 overflow-x-auto border-b border-border">
-        {tabs.map((tab) => (
-          <button key={tab} onClick={() => setActive(tab)} className={`shrink-0 rounded-t-lg px-4 py-2 font-mono text-xs capitalize transition-colors ${active === tab ? "bg-bg text-accent-blue" : "text-text-muted hover:text-text"}`}>
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-4 min-h-[80px]">
-        {active === "overview" && (
-          <p className="text-sm leading-relaxed text-text-muted">{project.overview}</p>
-        )}
-        {active === "problem" && (
-          <p className="text-sm leading-relaxed text-text-muted">{project.problem}</p>
-        )}
-        {active === "approach" && (
-          <ul className="space-y-2">
-            {project.approach.map((step) => (
-              <li key={step} className="flex gap-3 text-sm leading-relaxed text-text-muted">
-                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-mint" />
-                {step}
-              </li>
-            ))}
-          </ul>
-        )}
-        {active === "results" && (
-          <ul className="space-y-2">
-            {project.results.map((point) => (
-              <li key={point} className="flex gap-3 text-sm leading-relaxed text-text">
-                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-mint" />
-                {point}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
     </div>
   );
 }
@@ -211,14 +250,14 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 import Floral from "@/components/floral";
 export default function Projects() {
   return (
-    <section id="projects" className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24">
-              <Floral variant="top-left" />
-      <span className="font-mono text-xs text-accent-purple">03 — Projects</span>
+    <section id="projects" className="relative mx-auto max-w-5xl overflow-hidden px-6 py-14">
+      <Floral variant="top-right" />
+      <span className="font-mono text-xs text-accent-purple">04 — Projects</span>
       <h2 className="mt-4 font-display text-3xl font-semibold text-text sm:text-4xl">
         Applied work, end to end
       </h2>
 
-      <div className="mt-14 grid gap-6 sm:grid-cols-2" style={{ gridTemplateColumns: "minmax(0, 1fr)" }}>
+      <div className="mt-14 grid gap-6 sm:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.key} project={project} />
         ))}
