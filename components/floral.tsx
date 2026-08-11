@@ -6,7 +6,7 @@ const positions = {
 };
 
 const sizeMap = {
-  sm: "h-[260px] w-[260px]",
+  sm: "h-[300px] w-[300px]",
   lg: "h-[520px] w-[520px] lg:h-[600px] lg:w-[600px]",
 };
 
@@ -46,29 +46,31 @@ export default function FloralFlourish({
           </clipPath>
           <image
             href={photoSrc}
-            x="55"
-            y="30"
-            width="290"
-            height="290"
-            preserveAspectRatio="xMidYMid slice"
+            x="20"
+            y="0"
+            width="360"
+            height="360"
+            preserveAspectRatio="xMidYMid meet"
             clipPath={`url(#${clipId})`}
           />
         </>
       )}
       <path d={petalPath} stroke="#E8894A" strokeWidth="1.5" />
       {!photoSrc && (
-        <circle cx="200" cy="150" r="6" stroke="#6B4423" strokeWidth="1.5" />
+        <>
+          <circle cx="200" cy="150" r="6" stroke="#6B4423" strokeWidth="1.5" />
+          <path
+            d="M60 300 C 90 280, 110 290, 115 320 C 95 305, 75 315, 60 300 Z"
+            stroke="#4B7A3D"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M330 280 C 300 265, 285 280, 290 310 C 305 290, 325 295, 330 280 Z"
+            stroke="#4B7A3D"
+            strokeWidth="1.5"
+          />
+        </>
       )}
-      <path
-        d="M60 300 C 90 280, 110 290, 115 320 C 95 305, 75 315, 60 300 Z"
-        stroke="#4B7A3D"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M330 280 C 300 265, 285 280, 290 310 C 305 290, 325 295, 330 280 Z"
-        stroke="#4B7A3D"
-        strokeWidth="1.5"
-      />
     </svg>
   );
 }
