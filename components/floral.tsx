@@ -1,3 +1,7 @@
+"use client";
+
+import { useId } from "react";
+
 const positions = {
   "top-right": "-right-16 -top-16",
   "top-left": "-left-16 -top-16",
@@ -21,7 +25,8 @@ export default function FloralFlourish({
   layout?: "absolute" | "static";
   size?: keyof typeof sizeMap;
 }) {
-  const clipId = "floral-photo-clip";
+  const reactId = useId();
+  const clipId = `floral-photo-clip-${reactId}`;
   const petalPath =
     "M200 40 C 220 90, 260 100, 290 70 C 270 110, 280 150, 320 160 C 280 165, 260 200, 280 240 C 245 215, 210 225, 195 265 C 190 225, 155 210, 120 230 C 145 195, 135 155, 100 135 C 140 140, 170 115, 165 75 C 185 105, 210 95, 200 40 Z";
 
