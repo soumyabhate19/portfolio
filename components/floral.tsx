@@ -3,27 +3,39 @@ const positions = {
   "top-left": "-left-16 -top-16",
   "bottom-right": "-right-20 -bottom-20",
   "bottom-left": "-left-20 -bottom-20",
-  "hero-right": "right-0 top-28",
 };
+
+const sizeMap = {
+  sm: "h-[260px] w-[260px]",
+  lg: "h-[520px] w-[520px] lg:h-[600px] lg:w-[600px]",
+};
+
 export default function FloralFlourish({
   variant = "top-right",
   photoSrc,
+  layout = "absolute",
+  size = "lg",
 }: {
   variant?: keyof typeof positions;
   photoSrc?: string;
+  layout?: "absolute" | "static";
+  size?: keyof typeof sizeMap;
 }) {
   const clipId = "floral-photo-clip";
   const petalPath =
     "M200 40 C 220 90, 260 100, 290 70 C 270 110, 280 150, 320 160 C 280 165, 260 200, 280 240 C 245 215, 210 225, 195 265 C 190 225, 155 210, 120 230 C 145 195, 135 155, 100 135 C 140 140, 170 115, 165 75 C 185 105, 210 95, 200 40 Z";
 
-  const sizeClasses = photoSrc
-    ? "h-[460px] w-[460px] sm:h-[520px] sm:w-[520px]"
-    : "h-[360px] w-[360px] sm:h-[420px] sm:w-[420px]";
+  const positionClasses =
+    layout === "static"
+      ? "relative block mx-auto"
+      : `absolute ${positions[variant]} h-[360px] w-[360px] sm:h-[420px] sm:w-[420px]`;
+
+  const sizeClasses = layout === "static" ? sizeMap[size] : "";
 
   return (
     <svg
       viewBox="0 0 400 400"
-      className={`pointer-events-none absolute ${positions[variant]} ${sizeClasses} opacity-[0.8]`}
+      className={`pointer-events-none ${positionClasses} ${sizeClasses} opacity-[0.8]`}
       fill="none"
       aria-hidden="true"
     >
@@ -34,10 +46,10 @@ export default function FloralFlourish({
           </clipPath>
           <image
             href={photoSrc}
-            x="90"
-            y="40"
-            width="220"
-            height="220"
+            x="55"
+            y="30"
+            width="290"
+            height="290"
             preserveAspectRatio="xMidYMid slice"
             clipPath={`url(#${clipId})`}
           />
