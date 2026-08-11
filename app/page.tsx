@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen">
         <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pt-32 pb-24">
-          <Floral />
+          <Floral variant="hero-right" photoSrc="/profile.jpg" />
           <div className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 font-mono text-sm text-white" style={{ backgroundColor: "#C87B3F" }}>
           <span className="h-1.5 w-1.5 rounded-full bg-white" />
             Open to Data Science / ML / Analytics roles
