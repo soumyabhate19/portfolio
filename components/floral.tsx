@@ -10,8 +10,8 @@ const positions = {
 };
 
 const sizeMap = {
-  sm: "h-[300px] w-[300px]",
-  lg: "h-[520px] w-[520px] lg:h-[600px] lg:w-[600px]",
+  sm: "h-[340px] w-[340px]",
+  lg: "h-[380px] w-[380px] lg:h-[440px] lg:w-[440px]",
 };
 
 export default function FloralFlourish({
