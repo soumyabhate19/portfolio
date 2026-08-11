@@ -13,33 +13,44 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen">
         <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pt-32 pb-24">
-          <Floral variant="hero-right" photoSrc="/profile.jpg" />
-          <div className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 font-mono text-sm text-white" style={{ backgroundColor: "#C87B3F" }}>
-          <span className="h-1.5 w-1.5 rounded-full bg-white" />
-            Open to Data Science / ML / Analytics roles
-          </div>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-12">
+            <div className="sm:max-w-xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 font-mono text-sm text-white" style={{ backgroundColor: "#C87B3F" }}>
+              <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                Open to Data Science / ML / Analytics roles
+              </div>
 
-          <h1 className="mt-8 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-text sm:text-6xl md:text-7xl">
-            Soumya Bhate
-          </h1>
-          <p className="mt-4 font-display text-xl text-accent-blue sm:text-2xl">
-            I make data simple, but significant.
-        </p>
+              <div className="my-6 flex justify-center sm:hidden">
+                <Floral layout="static" size="sm" photoSrc="/profile.jpg" />
+              </div>
 
-          <p className="mt-6 max-w-xl text-lg text-text-muted">
-            Data Scientist &amp; ML Engineer who builds pipelines, statistical rigor, and LLM-powered applications, end to end.
-          </p>
+              <h1 className="mt-8 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-text sm:text-6xl md:text-7xl">
+                Soumya Bhate
+              </h1>
+              <p className="mt-4 font-display text-xl text-accent-blue sm:text-2xl">
+                I make data simple, but significant.
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#projects" className="rounded-lg bg-accent-blue px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5">
-              View Projects
-            </a>
-            <a href="/resume.pdf" className="rounded-lg bg-accent-blue px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5">
-              Download Resume
-            </a>
-            <a href="#contact" className="rounded-lg bg-accent-blue px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5">
-              Contact Me
-            </a>
+              <p className="mt-6 max-w-xl text-lg text-text-muted">
+                Data Scientist &amp; ML Engineer who builds pipelines, statistical rigor, and LLM-powered applications, end to end.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a href="#projects" className="rounded-lg bg-accent-blue px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5">
+                  View Projects
+                </a>
+                <a href="/resume.pdf" className="rounded-lg bg-accent-blue px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5">
+                  Download Resume
+                </a>
+                <a href="#contact" className="rounded-lg bg-accent-blue px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5">
+                  Contact Me
+                </a>
+              </div>
+            </div>
+
+            <div className="hidden shrink-0 sm:block">
+              <Floral layout="static" size="lg" photoSrc="/profile.jpg" />
+            </div>
           </div>
         </section>
         <Reveal><About /></Reveal>
