@@ -89,20 +89,20 @@ export default function Contact() {
         </form>
       </div>
 
-      <div className="mt-8 flex flex-nowrap items-center justify-center gap-x-6 overflow-x-auto">
+      <div className="mx-auto mt-8 flex w-fit max-w-full flex-nowrap items-center gap-x-6 overflow-x-auto">
           <a
             href="mailto:soumyabhate19@gmail.com"
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
           >
             <Mail className="h-5 w-5 shrink-0" />
-            <span className="text-sm text-text">soumyabhate19@gmail.com</span>
+            <span className="hidden text-sm text-text sm:inline">soumyabhate19@gmail.com</span>
           </a>
           <a
             href="tel:+16674520629"
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
           >
             <Phone className="h-5 w-5 shrink-0" />
-            <span className="text-sm text-text">+1 (667) 452-0629</span>
+            <span className="hidden text-sm text-text sm:inline">+1 (667) 452-0629</span>
           </a>
           <a
             href="https://linkedin.com/in/soumyabhate19"
@@ -111,16 +111,16 @@ export default function Contact() {
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
           >
             <LinkedinIcon className="h-5 w-5 shrink-0" />
-            <span className="text-sm text-text">soumyabhate19</span>
+            <span className="hidden text-sm text-text sm:inline">soumyabhate19</span>
           </a>
           <a
-            href="https://github.com/soumyabhate19"
+            href="https://github.com/soumyabhate"
             target="_blank"
             rel="noopener noreferrer"
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
           >
             <GithubIcon className="h-5 w-5 shrink-0" />
-            <span className="text-sm text-text">soumyabhate19</span>
+            <span className="hidden text-sm text-text sm:inline">soumyabhate</span>
           </a>
           <a
             href="https://x.com/soumyabhate19"
@@ -129,7 +129,7 @@ export default function Contact() {
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
           >
             <XIcon className="h-5 w-5 shrink-0" />
-            <span className="text-sm text-text">soumyabhate19</span>
+            <span className="hidden text-sm text-text sm:inline">soumyabhate19</span>
           </a>
       </div>
 
