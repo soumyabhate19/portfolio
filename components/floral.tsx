@@ -33,7 +33,7 @@ export default function FloralFlourish({
   const positionClasses =
     layout === "static"
       ? "relative block mx-auto"
-      : `absolute ${positions[variant]} h-[360px] w-[360px] sm:h-[420px] sm:w-[420px]`;
+      : `absolute ${positions[variant]} h-[360px] w-[360px] sm:h-[500px] sm:w-[500px]`;
 
   const sizeClasses = layout === "static" ? sizeMap[size] : "";
 
