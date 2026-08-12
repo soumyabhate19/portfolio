@@ -48,7 +48,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden shrink-0 sm:block sm:-mr-10">
+            <div className="hidden shrink-0 sm:block sm:-mr-20">
               <Floral layout="static" size="lg" photoSrc="/profile.jpg" />
             </div>
           </div>
