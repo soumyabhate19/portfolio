@@ -51,8 +51,8 @@ export default function FloralFlourish({
           </clipPath>
           <image
             href={photoSrc}
-            x="95"
-            y="75"
+            x="100"
+            y="70"
             width="190"
             height="190"
             preserveAspectRatio="xMidYMid meet"
