@@ -78,14 +78,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           />
           <div className="absolute right-0 top-0 flex h-full w-72 max-w-[80%] flex-col bg-bg px-6 py-4 shadow-xl">
-            <div className="flex items-center justify-between">
-              <a
-                href="#"
-                onClick={() => setMenuOpen(false)}
-                className="font-mono text-lg text-text-muted"
-              >
-                soumya<span className="text-accent-mint">.dev</span>
-              </a>
+            <div className="flex items-center justify-end">
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
