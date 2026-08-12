@@ -20,11 +20,11 @@ export default function Home() {
                 Open to Data Science / ML / Analytics roles
               </div>
 
-              <div className="my-6 flex justify-center sm:hidden">
+              <div className="my-2 flex justify-center sm:hidden">
                 <Floral layout="static" size="sm" photoSrc="/profile.jpg" />
               </div>
 
-              <h1 className="mt-8 whitespace-nowrap font-display text-4xl font-semibold leading-[1.05] tracking-tight text-text sm:text-5xl md:text-6xl xl:text-7xl">
+              <h1 className="mt-2 whitespace-nowrap font-display text-4xl font-semibold leading-[1.05] tracking-tight text-text sm:mt-8 sm:text-5xl md:text-6xl xl:text-7xl">
                 Soumya Bhate
               </h1>
               <p className="mt-4 font-display text-xl text-accent-blue sm:text-2xl">
@@ -48,7 +48,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden shrink-0 sm:block sm:-mr-20">
+            <div className="hidden shrink-0 sm:block">
               <Floral layout="static" size="lg" photoSrc="/profile.jpg" />
             </div>
           </div>
