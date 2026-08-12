@@ -11,7 +11,7 @@ const positions = {
 
 const sizeMap = {
   sm: "h-[320px] w-[320px]",
-  lg: "h-[450px] w-[450px] lg:h-[460px] lg:w-[460px]",
+  lg: "h-[400px] w-[400px] lg:h-[460px] lg:w-[460px]",
 };
 
 export default function FloralFlourish({
@@ -51,10 +51,10 @@ export default function FloralFlourish({
           </clipPath>
           <image
             href={photoSrc}
-            x="80"
-            y="50"
-            width="240"
-            height="240"
+            x="90"
+            y="60"
+            width="220"
+            height="220"
             preserveAspectRatio="xMidYMid meet"
             clipPath={`url(#${clipId})`}
           />
