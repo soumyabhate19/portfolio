@@ -51,7 +51,7 @@ export default function FloralFlourish({
           </clipPath>
           <image
             href={photoSrc}
-            x="105"
+            x="104"
             y="70"
             width="200"
             height="200"
