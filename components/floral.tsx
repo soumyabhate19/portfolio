@@ -10,8 +10,8 @@ const positions = {
 };
 
 const sizeMap = {
-  sm: "h-[400px] w-[400px]",
-  lg: "h-[700px] w-[700px] lg:h-[700px] lg:w-[700px]",
+  sm: "h-[260px] w-[260px]",
+  lg: "h-[320px] w-[320px] lg:h-[360px] lg:w-[360px]",
 };
 
 export default function FloralFlourish({
@@ -32,8 +32,8 @@ export default function FloralFlourish({
 
   const positionClasses =
     layout === "static"
-      ? "relative block ml-auto"
-      : `absolute ${positions[variant]} h-[360px] w-[360px] sm:h-[500px] sm:w-[500px]`;
+      ? "relative block mx-auto"
+      : `absolute ${positions[variant]} h-[360px] w-[360px] sm:h-[420px] sm:w-[420px]`;
 
   const sizeClasses = layout === "static" ? sizeMap[size] : "";
 
@@ -47,35 +47,40 @@ export default function FloralFlourish({
       {photoSrc && (
         <>
           <clipPath id={clipId}>
-            <path d={petalPath} />
+            <circle cx="200" cy="170" r="90" />
           </clipPath>
           <image
             href={photoSrc}
-            x="20"
-            y="0"
-            width="310"
-            height="310"
+            x="105"
+            y="75"
+            width="190"
+            height="190"
             preserveAspectRatio="xMidYMid meet"
             clipPath={`url(#${clipId})`}
+          />
+          <circle
+            cx="200"
+            cy="170"
+            r="90"
+            stroke="#E8894A"
+            strokeWidth="1.5"
           />
         </>
       )}
       <path d={petalPath} stroke="#E8894A" strokeWidth="1.5" />
       {!photoSrc && (
-        <>
-          <circle cx="200" cy="150" r="6" stroke="#6B4423" strokeWidth="1.5" />
-          <path
-            d="M60 300 C 90 280, 110 290, 115 320 C 95 305, 75 315, 60 300 Z"
-            stroke="#4B7A3D"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M330 280 C 300 265, 285 280, 290 310 C 305 290, 325 295, 330 280 Z"
-            stroke="#4B7A3D"
-            strokeWidth="1.5"
-          />
-        </>
+        <circle cx="200" cy="150" r="6" stroke="#6B4423" strokeWidth="1.5" />
       )}
+      <path
+        d="M60 300 C 90 280, 110 290, 115 320 C 95 305, 75 315, 60 300 Z"
+        stroke="#4B7A3D"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M330 280 C 300 265, 285 280, 290 310 C 305 290, 325 295, 330 280 Z"
+        stroke="#4B7A3D"
+        strokeWidth="1.5"
+      />
     </svg>
   );
 }
