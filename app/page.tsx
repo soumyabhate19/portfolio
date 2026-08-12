@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <Navbar />
       <main className="min-h-screen">
-        <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pt-32 pb-24">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-12">
-            <div className="sm:max-w-xl">
+        <section className="relative mx-auto max-w-6xl overflow-hidden px-6 pt-32 pb-24">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-10">
+            <div className="sm:flex-1">
               <div className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 font-mono text-sm text-white" style={{ backgroundColor: "#C87B3F" }}>
               <span className="h-1.5 w-1.5 rounded-full bg-white" />
                 Open to Data Science / ML / Analytics roles
@@ -24,7 +24,7 @@ export default function Home() {
                 <Floral layout="static" size="sm" photoSrc="/profile.jpg" />
               </div>
 
-              <h1 className="mt-8 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-text sm:text-6xl md:text-7xl">
+              <h1 className="mt-8 whitespace-nowrap font-display text-4xl font-semibold leading-[1.05] tracking-tight text-text sm:text-5xl md:text-6xl xl:text-7xl">
                 Soumya Bhate
               </h1>
               <p className="mt-4 font-display text-xl text-accent-blue sm:text-2xl">
