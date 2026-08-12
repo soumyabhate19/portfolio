@@ -52,7 +52,7 @@ export default function FloralFlourish({
           <image
             href={photoSrc}
             x="110"
-            y="70"
+            y="60"
             width="190"
             height="190"
             preserveAspectRatio="xMidYMid meet"
