@@ -11,7 +11,7 @@ const positions = {
 
 const sizeMap = {
   sm: "h-[400px] w-[400px]",
-  lg: "h-[450px] w-[450px] lg:h-[500px] lg:w-[500px]",
+  lg: "h-[600px] w-[600px] lg:h-[600px] lg:w-[600px]",
 };
 
 export default function FloralFlourish({
