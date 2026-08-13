@@ -114,7 +114,7 @@ export default function Contact() {
             <span className="hidden text-sm text-text sm:inline">soumyabhate19</span>
           </a>
           <a
-            href="https://github.com/soumyabhate"
+            href="https://github.com/soumyabhate19"
             target="_blank"
             rel="noopener noreferrer"
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
