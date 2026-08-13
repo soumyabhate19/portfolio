@@ -120,7 +120,7 @@ export default function Contact() {
             className="flex shrink-0 items-center gap-2 whitespace-nowrap text-text-muted transition-colors hover:text-accent-blue"
           >
             <GithubIcon className="h-5 w-5 shrink-0" />
-            <span className="hidden text-sm text-text sm:inline">soumyabhate</span>
+            <span className="hidden text-sm text-text sm:inline">soumyabhate19</span>
           </a>
           <a
             href="https://x.com/soumyabhate19"
