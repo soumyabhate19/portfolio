@@ -5,7 +5,7 @@ const education = [
     color: "#5CBB68",
     degree: "Master of Professional Studies, Data Science",
     school: "University of Maryland, Baltimore County (UMBC)",
-    location: "USA",
+    location: "Baltimore, USA",
     period: "2024 to 2026",
     meta: "CGPA 3.74 / 4.0",
     focus:
