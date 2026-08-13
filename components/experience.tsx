@@ -18,7 +18,7 @@ const roles = [
     period: "Jan 2023 to Jul 2024",
     role: "Data Engineer & Business Consultant",
     org: "OMEG Digital Technology Solutions",
-    location: "Remote",
+    location: "Dubai, UAE (Remote)",
     points: [
       "Built end-to-end data pipelines for web/mobile analytics on large-scale interaction data, leading 2 projects including a business banking client in Malaysia.",
       "Ran statistical analysis and A/B tests to optimize user engagement and performance, contributing to a 12% increase in user engagement across client projects.",
